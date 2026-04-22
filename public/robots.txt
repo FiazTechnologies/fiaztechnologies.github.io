@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fiaztechnologies.github.io/sitemap.xml
+
+# Fiaz Technologies - Developer-first tools and AI-powered solutions
+# https://fiaztechnologies.github.io

@@ -1,0 +1,116 @@
+---
+import type { Props } from 'astro';
+import { SITE_CONFIG } from '@/lib/constants';
+import '@/styles/global.css';
+import { Navbar } from '@/components/navbar';
+import { Footer } from '@/components/footer';
+
+interface LayoutProps {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  canonicalUrl?: string;
+  keywords?: string;
+}
+
+const {
+  title = SITE_CONFIG.name,
+  description = SITE_CONFIG.description,
+  ogImage = SITE_CONFIG.ogImage,
+  canonicalUrl,
+  keywords = 'AI solutions, SaaS development, developer tools, web development, mobile apps, software company, India',
+} = Astro.props as LayoutProps;
+
+const fullTitle = title === SITE_CONFIG.name ? `${title} — ${SITE_CONFIG.tagline}` : `${title} | ${SITE_CONFIG.name}`;
+const canonical = canonicalUrl || new URL(Astro.url.pathname, SITE_CONFIG.url).href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href={SITE_CONFIG.favicon} />
+    <link rel="apple-touch-icon" href={SITE_CONFIG.favicon} />
+
+    <!-- SEO Core -->
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content={SITE_CONFIG.name} />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href={canonical} />
+    <link rel="sitemap" href="/sitemap.xml" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={SITE_CONFIG.name} />
+    <meta property="og:locale" content="en_IN" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={SITE_CONFIG.twitter} />
+    <meta name="twitter:creator" content={SITE_CONFIG.twitter} />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Additional SEO -->
+    <meta name="geo.region" content="IN" />
+    <meta name="geo.placename" content="India" />
+
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": SITE_CONFIG.name,
+      "url": SITE_CONFIG.url,
+      "logo": SITE_CONFIG.ogImage,
+      "description": SITE_CONFIG.description,
+      "sameAs": [
+        "https://github.com/muhammad-fiaz",
+        "https://www.linkedin.com/in/muhammad-fiaz-/",
+        "https://x.com/muhammadfiaz_",
+        "https://muhammadfiaz.com"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": SITE_CONFIG.email,
+        "contactType": "customer service",
+        "availableLanguage": ["English"]
+      }
+    })} />
+
+    <!-- Theme init (prevent flash) -->
+    <script is:inline>
+      (function() {
+        const t = localStorage.getItem('theme');
+        if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen bg-background text-foreground antialiased">
+    <Navbar client:load />
+    <main>
+      <slot />
+    </main>
+    <Footer client:load />
+  </body>
+</html>
