@@ -170,10 +170,4 @@ bun run build
 
 Copyright © 2026 Fiaz Technologies. All rights reserved.
 
----
 
-<div align="center">
-
-**Built with love by [Fiaz Technologies](https://fiaztechnologies.github.io)**
-
-</div>
