@@ -12,7 +12,7 @@ export function CookiesContent() {
         <h3>Essential Cookies</h3>
         <p>Required for the website to function properly. These include theme preference storage.</p>
         <h3>Analytics Cookies</h3>
-        <p>Help us understand how visitors interact with our website to improve our services.</p>
+        <p>Help us understand how visitors interact with our website to improve our services. This data is collected anonymously, often via third-party performance monitoring tools, and cannot be used to personally identify you unless you explicitly provide personal information.</p>
 
         <h2>3. Managing Cookies</h2>
         <p>You can control and delete cookies through your browser settings. Note that disabling cookies may affect your experience on our website.</p>

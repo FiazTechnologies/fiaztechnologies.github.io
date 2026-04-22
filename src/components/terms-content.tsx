@@ -23,7 +23,10 @@ export function TermsContent() {
         <h2>6. Governing Law</h2>
         <p>These terms shall be governed by and construed in accordance with applicable laws.</p>
 
-        <h2>7. Contact</h2>
+        <h2>7. Analytics and Monitoring</h2>
+        <p>We may use cookies and third-party services to monitor and analyze the use of our services anonymously. This helps us improve our performance and user experience without tracking personally identifiable information unless explicitly provided by you.</p>
+
+        <h2>8. Contact</h2>
         <p>For questions about these Terms, please contact <a href={`mailto:${SITE_CONFIG.email}`}>{SITE_CONFIG.email}</a>.</p>
       </div>
     </LegalPage>

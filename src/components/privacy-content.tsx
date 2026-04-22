@@ -6,7 +6,7 @@ export function PrivacyContent() {
     <LegalPage title="Privacy Policy" lastUpdated="April 2026">
       <div>
         <h2>1. Information We Collect</h2>
-        <p>We may collect information you provide directly, such as when you fill out our contact form, including your name, email address, and message content.</p>
+        <p>We do not collect any personal information unless you explicitly provide it (e.g., when you fill out our contact form, including your name, email address, and message content).</p>
 
         <h2>2. How We Use Your Information</h2>
         <p>We use the information we collect to:</p>
@@ -18,7 +18,7 @@ export function PrivacyContent() {
         </ul>
 
         <h2>3. Data Sharing</h2>
-        <p>We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as required by law.</p>
+        <p>We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as required by law. We may, however, use third-party analytics, cookies, and performance monitoring tools to collect anonymous usage data to improve our services and user experience.</p>
 
         <h2>4. Data Security</h2>
         <p>We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
